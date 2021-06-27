@@ -6,17 +6,27 @@
 > Titan Defense é um jogo estilo Tower Defense que funciona dentro de um espaço celular. O objetivo do jogador é defender a cidade, que fica no final do mapa, de criaturas hostis chamadas de "titãs".
 
 ## Mapa 
-![Mapa](https://user-images.githubusercontent.com/62356359/122069573-ada10c00-cdcb-11eb-9dd0-f72c8c36f20e.png)
+![MapaFinal](https://user-images.githubusercontent.com/62356359/123555138-3e77d000-d75a-11eb-8e10-06221883d25d.png)
 
-## Torres e Titãs
->* Torres: são construídas pelo jogador, atacam os titãs para impedi-los de chegarem na cidade e tem dois tipos (torre de flechas e torre canhão) com diferentes características, além disso elas podem ser evoluídas pelo jogador para que causem mais dano.
->* Titãs: são inimigos com objetivo de chegar na cidade para causar dano, andam em linha reta e possuem diferentes tipos. Cada tipo de titã possui sua própria característica que influencia no dano ou na movimentação.
+## Torres
+> * Torres: são construídas pelo jogador, atacam os titãs para impedi-los de chegarem na cidade e tem dois tipos (torre de flechas e torre canhão) com diferentes características, além disso elas podem ser evoluídas pelo jogador para que causem mais dano.
+
+### Torre de Flechas
+![torreFlechasAlcance](https://user-images.githubusercontent.com/62356359/123555332-81867300-d75b-11eb-9870-3d6db902e57e.png)
+> * O quadrado verde representa a torre e os vermelhos representam as posições que a torre tem de alcance para dano. Como a torre de flechas só ataca uma posição por rodada, caso tenha mais de um titã em seu alcance ela precisa escolher um para atacar e a ordem de prioridade está representada na imagem (sendo o 1 a maior prioridade e o 4 a menor).
+
+### Torre de Canhão
+![TorreFlechas](https://user-images.githubusercontent.com/62356359/123555487-551f2680-d75c-11eb-9779-d88592b3fabb.png)
+> * O quadrado verde representa a torre e os vermelhos representam as posições que a torre da dano. Como a torre de canhão tem dano em area, toda rodada três posições sofrem dano do canhão.
+
+## Titãs
+>* Titãs: são inimigos com objetivo de chegar na cidade para causar dano, andam em linha reta e a cada nova fase ficam mais fortes (a vida e o dano aumentam).
 
 ## Cidade
-> A cidade fica no final do Mapa e a missão do jogador é proteger ela. Sempre que um titã consegue passar por todas as defesas e chegar vivo na cidade, ela perde uma certa quantidade de vida. Se a vida da cidade acabar, o jogador perde o jogo.
+> A cidade fica no final do Mapa e a missão do jogador é proteger ela. Sempre que um titã consegue passar por todas as defesas e chegar vivo na cidade, ela perde uma certa quantidade de vida (depende do dano do titã). Se a vida da cidade acabar, o jogador perde o jogo.
 
 ## Fases e sistema de dinheiro
-> * Fases: o jogo possui 5 fases e cada fase possui um certo número e tipo de titãs. Antes do começo de cada fase o jogador tem a "fase de preparação" que consiste em um certo tempo para o jogador montar e evoluir suas defesas, nesse periodo não serão gerados titãs. Depois de todos os titãs da fase serem derrotados uma nova fase irá se iniciar.
+> * Fases: o jogo possui 10 fases e cada fase possui um certo número (que varia aleatoriamente). Antes do começo de cada fase o jogador tem a "fase de preparação" que consiste em um certo tempo para o jogador montar e evoluir suas defesas, nesse periodo não serão gerados titãs. Depois de todos os titãs da fase serem derrotados uma nova fase irá se iniciar.
 > * Dinheiro: o jogo também possui um sistema de dinheiro para controlar a compra e a evolução de torres. Sempre que jogador passar de fase ou derrotar um titã ele será recompensado com uma certa quantidade de dinheiro. Esse dinheiro recebido poderá ser usado em toda "fase de preparação" com o intuito de melhorar as defesas.
 
 # Equipe
@@ -78,15 +88,12 @@ public void algoInteressante(…) {
 
 # Documentação dos Componentes
 
-O vídeo a seguir apresenta um detalhamento de um projeto baseado em componentes:
-
-[![Projeto baseado em Componentes](http://img.youtube.com/vi/1LcSghlin6o/0.jpg)](https://youtu.be/1LcSghlin6o)
-
 # Diagramas
 
 ## Diagrama Geral do Projeto
 
-> <Apresente um diagrama geral de organização da organização do seu sistema. O formato é livre. A escolha de um ou mais estilos arquiteturais será considerado um diferencial.>
+![Arquitetura Final](https://user-images.githubusercontent.com/62356359/123555578-f6a67800-d75c-11eb-8f23-ebfddb4af40e.png)
+
 
 > <Faça uma breve descrição do diagrama.>
 
