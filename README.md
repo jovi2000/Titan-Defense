@@ -14,11 +14,9 @@
 ### Torre de Flechas
 ![torreFlechasAlcance](https://user-images.githubusercontent.com/62356359/123555332-81867300-d75b-11eb-9870-3d6db902e57e.png)
 > * O quadrado verde representa a torre e os vermelhos representam as posições que a torre tem de alcance para dano. Como a torre de flechas só ataca uma posição por rodada, caso tenha mais de um titã em seu alcance ela precisa escolher um para atacar e a ordem de prioridade está representada na imagem (sendo o 1 a maior prioridade e o 4 a menor).
-
 ### Torre de Canhão
 ![TorreFlechas](https://user-images.githubusercontent.com/62356359/123555487-551f2680-d75c-11eb-9779-d88592b3fabb.png)
 > * O quadrado verde representa a torre e os vermelhos representam as posições que a torre da dano. Como a torre de canhão tem dano em area, toda rodada três posições sofrem dano do canhão.
-
 ## Titãs
 >* Titãs: são inimigos com objetivo de chegar na cidade para causar dano, andam em linha reta e a cada nova fase ficam mais fortes (a vida e o dano aumentam).
 
@@ -26,8 +24,8 @@
 > A cidade fica no final do Mapa e a missão do jogador é proteger ela. Sempre que um titã consegue passar por todas as defesas e chegar vivo na cidade, ela perde uma certa quantidade de vida (depende do dano do titã). Se a vida da cidade acabar, o jogador perde o jogo.
 
 ## Fases e sistema de dinheiro
-> * Fases: o jogo possui 10 fases e cada fase possui um certo número (que varia aleatoriamente). Antes do começo de cada fase o jogador tem a "fase de preparação" que consiste em um certo tempo para o jogador montar e evoluir suas defesas, nesse periodo não serão gerados titãs. Depois de todos os titãs da fase serem derrotados uma nova fase irá se iniciar.
-> * Dinheiro: o jogo também possui um sistema de dinheiro para controlar a compra e a evolução de torres. Sempre que jogador passar de fase ou derrotar um titã ele será recompensado com uma certa quantidade de dinheiro. Esse dinheiro recebido poderá ser usado em toda "fase de preparação" com o intuito de melhorar as defesas.
+> * Fases: o jogo possui 10 fases, cada fase possui um número de rodadas e um certo número (que varia aleatoriamente). Antes do começo de cada rodada o jogador tem a "preparação das defesas" que consiste no tempo para o jogador montar e evoluir suas defesas. Depois da "preparação das defesas" o jogador pressiona o botão "Play" e a rodada começa. Durante a rodada ocorrem certas ações na seguinte ordem: os titãs se movem (caso haja titãs no mapa), titãs são gerado(caso ainda tenham titãs para serem gerados na fase) e as torres atacam(caso haja titãs no mapa).
+> * Dinheiro: o jogo também possui um sistema de dinheiro para controlar a compra e a evolução de torres. Sempre derrotar um titã ele será recompensado com uma certa quantidade de dinheiro. Esse dinheiro recebido poderá ser usado na "preparação das defesas" com o intuito de melhorar a defesa da cidade.
 
 # Equipe
 * `João Vitor Viégas Barreira` - `175116`
