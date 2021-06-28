@@ -141,13 +141,14 @@ Interfaces | `IEntidade, IMapaModel, ICidadeModel, ITitaModel, ITorreModel`
 
 Interfaces associadas a esse componente:
 
-![Diagrama Interfaces](diagrama-interfaces.png)
+![Model_Interfaces](https://user-images.githubusercontent.com/62356359/123567693-283d3480-d799-11eb-8675-8644337902cb.png)
 
-Interface agregadora do componente em Java:
+Interfaces herdeiras de IEntidade:
 
 ~~~java
-public interface IDataSet extends ITableProducer, IDataSetProperties {
-}
+public interface ICidadeModel extends IEntidade{...}
+public interface ITitaModel extends IEntidade {...}
+public interface ITorreModel extends IEntidade {...}
 ~~~
 
 ## Detalhamento das Interfaces
