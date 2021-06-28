@@ -35,8 +35,8 @@
 # Vídeos do Projeto
 
 ## Vídeo da Prévia
-> https://drive.google.com/file/d/1E2VLxWiYAv0nPFHnypNZxOuoz48CBGjd/view
-
+>https://drive.google.com/file/d/1Fenx-96tPQzaF4qbFHwBQUgrzJaPLyas/view?usp=sharing
+>
 ## Vídeo do Jogo
 > https://drive.google.com/file/d/16wJ0mi4CBnj8j7ZsLVpSVaDnW06pvbyk/view?usp=sharing
 
