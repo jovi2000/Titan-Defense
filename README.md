@@ -92,43 +92,50 @@ public void algoInteressante(…) {
 
 ![Arquitetura Final](https://user-images.githubusercontent.com/62356359/123555578-f6a67800-d75c-11eb-8f23-ebfddb4af40e.png)
 
-
-> <Faça uma breve descrição do diagrama.>
+> * GameView: componente que implementa a interface gráfica e que recebe o que é feito pelo jogador, como por exemplo a construção de uma torre. Sempre que o jogador realiza uma nova ação o GameView solicita ao Controller para que ele realize as modificações necessárias.
+> * Controller: componente que recebe ações do GameView e se comunica diretamente com o Model para realizar as modificações e ações solicitadas. Cada componente do Controller possui seu próprio Model e só pode se comunicar diretamente com ele. Caso um componente do Controller deseje algum dado ou alguma modificação em outro Model que não seja o dele, ele precisa se comunicar com o Controller daquele Model.
+> * Model: componente que armazana todas os dados (em atributos) dos modelos das Entidades(Cidade, Titã e Torre) e do Mapa. Caso um controller deseje receber ou modificar um dado, ele sempre precisa se comunicar com o Model. 
 
 ## Diagrama Geral de Componentes
 
-### Exemplo 1
+## Componente `GameView`
 
-Este é o diagrama compondo componentes para análise:
+> Componente que implementa a interface gráfica e que recebe as ações realizadas pelo jogador
 
-![Diagrama Analise](diagrama-componentes-analise.png)
-
-### Exemplo 2
-
-Este é um diagrama inicial do projeto de jogos:
-
-![Diagrama Jogos](diagrama-componentes-jogos.png)
-
-### Exemplo 3
-
-Este é outro diagrama de um projeto de vendas:
-
-![Diagrama Vendas](diagrama-componentes-vendas.png)
-
-Para cada componente será apresentado um documento conforme o modelo a seguir:
-
-## Componente `<Nome do Componente>`
-
-> <Resumo do papel do componente e serviços que ele oferece.>
-
-![Componente](diagrama-componente.png)
+![GameView](https://user-images.githubusercontent.com/62356359/123559745-56f4e400-d774-11eb-968f-9b55188395c7.png)
 
 **Ficha Técnica**
 item | detalhamento
 ----- | -----
-Classe | `<caminho completo da classe com pacotes>` <br> Exemplo: `pt.c08componentes.s20catalog.s10ds.DataSetComponent`
-Autores | `<nome dos membros que criaram o componente>`
-Interfaces | `<listagem das interfaces do componente>`
+Classe | `view.GameView`
+Autores | `João Barreira e Arimã Batista`
+Interfaces | `IMapaController, ICidadeController, ITitaController, ITorreController`
+
+`Controller`
+
+> Componente que recebe ações do GameView e se comunica diretamente com o Model para realizar as modificações e ações solicitadas
+
+![Controller](https://user-images.githubusercontent.com/62356359/123563407-d7beda80-d78a-11eb-975a-e8e4968ac6c0.png)
+
+**Ficha Técnica**
+item | detalhamento
+----- | -----
+Classe | `package controller (Esse componente é um conjunto de 5 classes)`
+Autores | `João Barreira e Arimã Batista`
+Interfaces | `IMapaController, ICidadeController, ITitaController, ITorreController, IMapaModel, ICidadeModel, ITitaModel, ITorreModel`
+
+`Model`
+
+> Componente que armazana todas os dados (em atributos) dos modelos das Entidades(Cidade, Titã e Torre) e do Mapa
+
+![Model](https://user-images.githubusercontent.com/62356359/123565426-3720e880-d793-11eb-9ead-60b8e0db4f3d.png)
+
+**Ficha Técnica**
+item | detalhamento
+----- | -----
+Classe | `package model (Esse componente é um conjunto de 7 classes)`
+Autores | `João Barreira e Arimã Batista`
+Interfaces | `IEntidade, IMapaModel, ICidadeModel, ITitaModel, ITorreModel`
 
 ### Interfaces
 
