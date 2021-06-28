@@ -45,7 +45,7 @@
 > https://docs.google.com/presentation/d/1dCfNGbkELlAtR9qIP_BduD3jF_Aw-sGt2bxIJ3sxNaA/edit?usp=sharing
 
 ## Slides da Apresentação Final
-`<Coloque um link para os slides da apresentação final do projeto.>`
+https://docs.google.com/presentation/d/103LRylzl4-XPtT3nhDj4L6bDGjE_FVFtpnDh1c8heJY/edit?usp=sharing
 
 ## Relatório de Evolução
 > O projeto inicialmente tinha sido pensado para ter uma arquitetura com 4 componentes: Model, View, Controller e Gameplay, porém ao final do projeto o Gameplay foi retirado por não ser considerado útil e por deixar a arquitetura mais confusa. Além disso, do primeiro projeto do jogo para o final muitas coisas foram modificadas na ideia e no funcionamento do jogo, um exemplo é a ideia inicial de criar diversos tipos de titãs e até um "boss" na última fase do jogo, porém isso não foi concretizado. A ideia de interfaces também foi muito modifica e melhorada para ajudar na organização do código. A principal lição aprendida com as mudanças realizadas foi: organizar e pensar com muita calma a arquitetura do projeto. Embora no final a arquitetura do jogo tenha ficado compacta, as constantes mudanças na arquitetura fizeram com que o código tivesse que ser refeito variás vezs e ficou um pouco desorganizado em alguns pontos, algo que atrapalhou muito pelo fato da arquitetura não ter sido pensada com calma no começo.
