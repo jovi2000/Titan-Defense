@@ -53,15 +53,56 @@
 
 # Destaques de Código
 
-> <Escolha trechos relevantes e/ou de destaque do seu código. Apresente um recorte (você pode usar reticências para remover partes menos importantes). Veja como foi usado o highlight de Java para o código.>
+## Mudança na cor dos titãs conforme a vida
+
+Os titãs mudam de cor conforme  a porcentagem de vida dos mesmos, nesse trecho podemos ver como isso é implementado, também podemos ver como o “view” conversa com o “mapaController” para saber a localização dos titãs no mapa.
 
 ~~~java
-// Recorte do seu código
-public void algoInteressante(…) {
-   …
-   trechoInteressante = 100;
-}
+Entidade ponteiroMapa = mapaController.getCelula(j, y);
+  if (ponteiroMapa == null)
+  {
+      piso_campo[x][y].setIcon(piso);
+  }
+  else
+  {
+      titaController.connect((TitaModel)mapaController.getCelula(j,y));
+      System.out.println(titaController.porcentagemDaVida());
+      if(titaController.porcentagemDaVida() > 80) piso_campo[x][y].setIcon(dano0);
+      else if(titaController.porcentagemDaVida() > 60) piso_campo[x][y].setIcon(dano1);
+      else if(titaController.porcentagemDaVida() > 40) piso_campo[x][y].setIcon(dano2);
+      else if(titaController.porcentagemDaVida() > 20) piso_campo[x][y].setIcon(dano3);
+      else piso_campo[x][y].setIcon(dano4);
+  }
 ~~~
+### Exemplo:
+
+![Screenshot from 2021-06-28 02-15-12](https://user-images.githubusercontent.com/62356359/123583866-baa00100-d7b6-11eb-9ab4-a8576c2024da.png)
+
+## Tratamento de exceções
+
+Aqui podemos ver tratamento de exceções para impedir que seja feita a compra de torres caso não haja dinheiro para efetuar a  ação.
+
+~~~java
+case "Canhão":
+    try {
+        mapaController.construir_torre(j, y, pp);
+    }
+    catch (CompraInvalida erro) {
+        compraValida = false;
+        celula[x][y].setSelectedItem("Vago");
+        JOptionPane.showMessageDialog(null, erro.getMessage());
+    }
+    if (compraValida) {
+        celula[x][y].removeAllItems();
+        teto_campo[x][y].setIcon(torreCanhao);
+        celula[x][y].addItem("Nível 1");
+        celula[x][y].addItem("Evoluir 2");
+    }
+~~~
+### Exemplo:
+
+![Screenshot from 2021-06-28 02-19-28](https://user-images.githubusercontent.com/62356359/123584192-503b9080-d7b7-11eb-94a5-ea0faa6d1c42.png)
+
 
 # Destaques de Pattern
 
