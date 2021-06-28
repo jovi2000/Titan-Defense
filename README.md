@@ -38,7 +38,7 @@
 > https://drive.google.com/file/d/1E2VLxWiYAv0nPFHnypNZxOuoz48CBGjd/view
 
 ## Vídeo do Jogo
-> <Coloque um link para o vídeo em que é demonstrada a versão final do jogo. Esse vídeo deve ter em torno de 5 minutos. Este vídeo não apresenta slides, nem substitui a apresentação final do projeto, que será feita por conferência. Ele mostra apenas o jogo em funcionamento.>
+> https://drive.google.com/file/d/16wJ0mi4CBnj8j7ZsLVpSVaDnW06pvbyk/view?usp=sharing
 
 # Slides do Projeto
 
