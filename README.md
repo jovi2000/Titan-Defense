@@ -145,6 +145,8 @@ public void construir_torre(int linha, int coluna, String tipo) throws CompraInv
 
 ## Diagrama Geral de Componentes
 
+![Sistema de Interfaces - Arquitetura](https://user-images.githubusercontent.com/62356359/123584721-3d758b80-d7b8-11eb-83e7-7b24fe3a2c79.jpg)
+
 ## Componente `GameView`
 
 > Componente que implementa a interface gráfica e que recebe as ações realizadas pelo jogador
