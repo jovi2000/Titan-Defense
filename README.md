@@ -46,13 +46,42 @@
 > https://docs.google.com/presentation/d/1dCfNGbkELlAtR9qIP_BduD3jF_Aw-sGt2bxIJ3sxNaA/edit?usp=sharing
 
 ## Slides da Apresentação Final
-https://docs.google.com/presentation/d/123gqI0D2ojSfrvvVR-tEmuCFakgORj0XoREfDdLoSgE/edit?usp=sharing
+> https://docs.google.com/presentation/d/123gqI0D2ojSfrvvVR-tEmuCFakgORj0XoREfDdLoSgE/edit?usp=sharing
 
 ## Relatório de Evolução
 > O projeto inicialmente tinha sido pensado para ter uma arquitetura com 4 componentes: Model, View, Controller e Gameplay, porém ao final do projeto o Gameplay foi retirado por não ser considerado útil e por deixar a arquitetura mais confusa. Além disso, do primeiro projeto do jogo para o final muitas coisas foram modificadas na ideia e no funcionamento do jogo, um exemplo é a ideia inicial de criar diversos tipos de titãs e até um "boss" na última fase do jogo, porém isso não foi concretizado. A ideia de interfaces também foi muito modifica e melhorada para ajudar na organização do código. A principal lição aprendida com as mudanças realizadas foi: organizar e pensar com muita calma a arquitetura do projeto. Embora no final a arquitetura do jogo tenha ficado compacta, as constantes mudanças na arquitetura fizeram com que o código tivesse que ser refeito variás vezs e ficou um pouco desorganizado em alguns pontos, algo que atrapalhou muito pelo fato da arquitetura não ter sido pensada com calma no começo.
 
 
 # Destaques de Código
+
+## Interação entre os componentes através de interfaces
+
+Os componentes se comunicam através de interfaces no programa. No exemplo a seguir será mostrada a interação do GameView com o MapaController, TitaController e TorreController no qual o GameView tem uma referencia do MapaController, do TitaController e do TorreController e com isso consegue chamar métodos desses controllers.
+
+~~~java
+public class GameView implements ActionListener, IRMapaController, IRCidadeController, IRTitaController, IRTorreController { 
+  ...
+  private IMapaController mapaController;
+  private ITitaController titaController;
+   private ITorreController torreController;
+  ...
+  public void setMapaController(IMapaController mapaController) {
+          this.mapaController = mapaController;
+  }
+  public void connect(ITitaController titaController) {
+        this.titaController = titaController;
+  }
+
+  public void connect(ITorreController torreController) {
+        this.torreController = torreController;
+  }
+  ...
+  titaController.moverTitas();
+  mapaController.gerarTitas();
+  torreController.ataqueDasTorres();
+  titaController.verificarTitas();
+}
+~~~
 
 ## Mudança na cor dos titãs conforme a vida
 
