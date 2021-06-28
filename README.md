@@ -42,7 +42,7 @@
 # Slides do Projeto
 
 ## Slides da Prévia
-> https://drive.google.com/file/d/1OOp8SSEmv9yHHQGiwm8wtko_4qYf-cZQ/view
+> https://docs.google.com/presentation/d/1dCfNGbkELlAtR9qIP_BduD3jF_Aw-sGt2bxIJ3sxNaA/edit?usp=sharing
 
 ## Slides da Apresentação Final
 `<Coloque um link para os slides da apresentação final do projeto.>`
@@ -153,51 +153,206 @@ public interface ITorreModel extends IEntidade {...}
 
 ## Detalhamento das Interfaces
 
-### Interface `<nome da interface>`
+### Interface `IMapaController`
 
-`<Resumo do papel da interface.>`
-
-~~~
-<Interface em Java.>
-~~~
-
-Método | Objetivo
--------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
-
-## Exemplo:
-
-### Interface `ITableProducer`
-
-Interface provida por qualquer fonte de dados que os forneça na forma de uma tabela.
+`Interface provida pela classe MapaController para outras classes que requerem métodos presentes na interface`
 
 ~~~java
-public interface ITableProducer {
-  String[] requestAttributes();
-  String[][] requestInstances();
+public interface IMapaController {
+    public void movimentarTita(TitaModel tita, int linha, int coluna);
+    public void retirarTitaDoMapa(int linha, int coluna);
+    public void contruirTorre(int linha, int coluna, int tipo) throws CompraInvalida;
+    public void gerarTitas();
+    public void evoluirTorre(int linha, int coluna) throws CompraInvalida;
+    public Entidade getCelula(int linha, int coluna);
+    public void setCelula(Entidade novaEntidade, int linha, int coluna);
+    public int getFase();
+    public int getNumeroDeTitas();
+    public void passarDeFase();
 }
 ~~~
 
 Método | Objetivo
 -------| --------
-`requestAttributes` | Retorna um vetor com o nome de todos os atributos (colunas) da tabela.
-`requestInstances` | Retorna uma matriz em que cada linha representa uma instância e cada coluna o valor do respectivo atributo (a ordem dos atributos é a mesma daquela fornecida por `requestAttributes`.
+`movimentarTita` | `recebe a linha e a coluna de um titã e modifica sua posição na matriz que representa o mapa`
+`retirarTitaDoMapa` | `recebe a linha e a coluna de um titã e o remove na matriz que representa o mapa`
+`contruirTorre` | `recebe uma linha e uma coluna e adiciona uma torre do tipo passado por parametro nessa posição da matriz que representa o mapa `
+`gerarTitas` | `cria novos titãs e os coloca no mapa`
+`evoluirTorre` | `recebe uma linha e uma coluna e nessa posição solicita a evolução da torre`
+`getCelula` | `solicita para o MapaModel a célula com linha e coluna passadas no parametro e retorna o valor da célula`
+`setCelula` | `solicita para o MapaModel a mudança da Entidade atual na celula com linha e coluna passadas no parametro para a Entidade enviada por parametro`
+`getFase` | `retorna o valor da fase atual`
+`getNumeroDeTitas` | `retorna o valor do número de titãs que restam ser gerados`
+`passarDeFase` | `aumenta em 1 o número da fase e reseta alguns atributos do MapaController`
 
-### Interface `IDataSetProperties`
+### `ICidadeController`
 
-Define o recurso (usualmente o caminho para um arquivo em disco) que é a fonte de dados.
+`Interface provida pela classe CidadeController para outras classes que requerem métodos presentes na interface`
 
 ~~~java
-public interface IDataSetProperties {
-  public String getDataSource();
-  public void setDataSource(String dataSource);
+public interface ICidadeController {
+    public void diminuirVida(int dano);
+    public void aumentarDinheiro(int recompensa);
+    public void diminuirDinheiro(int gasto);
+    public int getColuna();
+    public int getVida();
+    public int getDinheiro();
 }
 ~~~
 
 Método | Objetivo
 -------| --------
-`getDataSource` | Retorna o caminho da fonte de dados.
-`setDataSource` | Define o caminho da fonte de dados, informado através do parâmetro `dataSource`.
+`diminuirVida` | `diminui o atributo vida da CidadeModel conforme o dano recebido por parametro`
+`aumentarDinheiro` | `aumenta o dinheiro da CidadeModel conforme a recompensa recebida por parametro`
+`diminuirDinheiro` | `diminui o dinheiro da CidadeModel conforme o gasto recebido por parametro`
+`getColuna` | `solicita para a CidadeModel sua coluna e retorna ela`
+`getVida` | `solicita para a CidadeModel sua vida e retorna ela`
+`getDinheiro` | `solicita para a CidadeModel seu dinheiro e retorna ele`
+
+### `ITitaController`
+
+`Interface provida pela classe TitaController para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface ITitaController {
+    public void connect(ITitaModel titaModel);
+    public void diminuirVida(int dano);
+    public void moverTitas();
+    public void verificarTitas();
+    public int porcentagemDaVida();
+    public int getLinha();
+    public int getColuna();
+    public void setLinha(int linha);
+    public void setColuna(int coluna);
+    public void setRecompensa(int recompensa);
+    public int getVida();
+    public void setVida(int vida);
+    public void setVidaTotal(int vida);
+    public void adicionarNaLista();
+    public void setDano(int dano);
+    public boolean listaVazia();
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`connect` | `faz com que o titaModel passado como parametro vire o atributo TitaModel do TitaController`
+`diminuirVida` | `diminui o atributo vida da TitaModel conforme o dano recebido por parametro`
+`moverTitas` | `percorre pela lista de titãs(atributo de TitaController) e faz todos se movimentarem`
+`verificarTitas` | `percorre pela lista de titãs e verifica se algum morreu ou chegou na cidade`
+`porcentagemDaVida` | `calcula e retorna a porcentagem de vida que o titã possui`
+`getLinha` | `solicita ao TitaModel sua linha e retorna ela`
+`setLinha` | `solicita ao TitaModel para alterar sua linha de acordo com o número passado por parametro`
+`getColuna` | `solicita ao TitaModel sua coluna e retorna ela`
+`setColuna` | `solicita ao TitaModel para alterar sua coluna de acordo com o número passado por parametro`
+`setRecompensa` | `solicita ao TitaModel para alterar sua recompensa de acordo com o número passado por parametro`
+`getVida` | `solicita ao TitaModel sua vida e retorna ela`
+`setVida` | `solicita ao TitaModel para alterar sua vida de acordo com o número passado por parametro`
+`setVidaTotal` | `solicita ao TitaModel para alterar sua vidaTotal de acordo com o número passado por parametro`
+`adicionarNaLista` | `adiciona o TitaModel na lista de titãs`
+`setDano` | `solicita ao TitaModel para alterar seu dano de acordo com o número passado por parametro`
+`listaVazia` | `verifica se a lista de titãs está vazia e caso esteja vazia retorna true`
+
+### `ITorreController`
+
+`Interface provida pela classe TorreController para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface ITorreController {
+    public void connect(ITorreModel torreModel);
+    public void evoluir();
+    public void adicionarNaLista();
+    public void ataqueDasTorres();
+    public int getCusto();
+    public void setCusto(int custo);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`connect` | `faz com que a TorreModel passado como parametro vire o atributo TorreModel do TitaController`
+`evoluir` | `melhora alguns atributos da TorreModel(atributo do TorreController)`
+`adicionarNaLista` | `adiciona a TorreModel na lista de titãs`
+`ataqueDasTorres` | `percorre a lista de torres e faz cada torre realizar seu ataque`
+`getCusto` | `solicita para a TorreModel seu custo e retorna ele`
+`setCusto` | `solicita à TorreModel para alterar seu custo de acordo com o número passado por parametro`
+
+### `IEntidade`
+
+`Interface provida pela classe IEntidade para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface IEntidade {
+    public int getVida();
+    public void setVida(int vida);
+    public int getLinha();
+    public void setLinha(int linha);
+    public int getColuna();
+    public void setColuna(int coluna);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`getVida` | `retorna o valor do atributo vida`
+`setVida` | `altera o valor do atributo vida pelo número passado por parametro`
+`getLinha` | `retorna o valor do atributo linha`
+`setLinha` | `altera o valor do atributo linha pelo número passado por parametro`
+`getColuna` | `retorna o valor do atributo coluna`
+`setColuna` | `altera o valor do atributo coluna pelo número passado por parametro`
+
+### `IMapaModel`
+
+`Interface provida pela classe MapaModel para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface IMapaModel {
+    public Entidade getCelula(int linha, int coluna);
+    public void setCelula(Entidade novaEntidade, int linha, int coluna);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`getCelula` | `retorna a Entidade da célula na linha e na coluna passadas por parametro`
+`setCelula` | `coloca a Entidade passada como parametro na célula de linha e coluna passadas por parametro`
+
+### `ICidadeModel`
+
+`Interface provida pela classe CidadeModel para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface ICidadeModel extends IEntidade {
+    public int getDinheiro();
+    public void setDinheiro(int dinheiro);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`getDinheiro` | `retorna o valor do atributo dinheiro`
+`setDinheiro` | `altera o valor do atributo dinheiro pelo número passado por parametro`
+
+### `ITitaModel`
+
+`Interface provida pela classe TitaModel para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface ITitaModel extends IEntidade {
+    public int getDano();
+    public void setDano(int dano);
+    public int getRecompensa();
+    public void setRecompensa(int recompensa);
+    public int getVidaTotal();
+    public void setVidaTotal(int vidaTotal);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`getDinheiro` | `retorna o valor do atributo dinheiro`
+`setDinheiro` | `altera o valor do atributo dinheiro pelo número passado por parametro`
+
 
 # Plano de Exceções
 
