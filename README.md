@@ -350,23 +350,51 @@ public interface ITitaModel extends IEntidade {
 
 Método | Objetivo
 -------| --------
-`getDinheiro` | `retorna o valor do atributo dinheiro`
-`setDinheiro` | `altera o valor do atributo dinheiro pelo número passado por parametro`
+`getDano` | `retorna o valor do atributo dano`
+`setDano` | `altera o valor do atributo dano pelo número passado por parametro`
+`getRecompensa` | `retorna o valor do atributo recompensa`
+`setRecompensa` | `altera o valor do atributo recompensa pelo número passado por parametro`
+`getVidaTotal` | `retorna o valor do atributo vidaTotal`
+`setVidaTotal` | `altera o valor do atributo vidaTotal pelo número passado por parametro`
+
+
+### `ITorreModel`
+
+`Interface provida pela classe TorreModel para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface ITorreModel extends IEntidade {
+    public int getNivel();
+    public void setNivel(int nivel);
+    public int getDano();
+    public void setDano(int dano);
+    public int getCusto();
+    public void setCusto(int custo);
+    public char getTipo();
+    public void setTipo(char tipo);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`getNivel` | `retorna o valor do atributo nivel`
+`setNivel` | `altera o valor do atributo nivel pelo número passado por parametro`
+`getDano` | `retorna o valor do atributo dano`
+`setDano` | `altera o valor do atributo dano pelo número passado por parametro`
+`getCusto` | `retorna o valor do atributo custo`
+`setCusto` | `altera o valor do atributo custo pelo número passado por parametro`
+`getTipo` | `retorna o valor do atributo tipo`
+`setTipo` | `altera o valor do atributo tipo pelo char passado por parametro`
 
 
 # Plano de Exceções
 
 ## Diagrama da hierarquia de exceções
-`<Elabore um diagrama com a hierarquia de exceções como detalhado abaixo>`
 
-![Hierarquia Exceções](exception-hierarchy.png)
+![exceções](https://user-images.githubusercontent.com/62356359/123581418-45cac800-d7b2-11eb-8a3c-ecc318ac1ae2.png)
 
 ## Descrição das classes de exceção
 
-`<Monte uma tabela descritiva seguindo o exemplo>:`
-
 Classe | Descrição
 ----- | -----
-DivisaoInvalida | Engloba todas as exceções de divisões não aceitas.
-DivisaoInutil | Indica que a divisão por 1 é inútil.
-DivisaoNaoInteira | Indica uma divisão não inteira.
+CompraInvalida | Indica que a compra que está sendo realizada é inválida e não pode ocorrer
