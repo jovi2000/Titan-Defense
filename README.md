@@ -111,7 +111,7 @@ Classe | `view.GameView`
 Autores | `João Barreira e Arimã Batista`
 Interfaces | `IMapaController, ICidadeController, ITitaController, ITorreController`
 
-`Controller`
+## `Controller`
 
 > Componente que recebe ações do GameView e se comunica diretamente com o Model para realizar as modificações e ações solicitadas
 
@@ -124,7 +124,7 @@ Classe | `package controller (Esse componente é um conjunto de 5 classes)`
 Autores | `João Barreira e Arimã Batista`
 Interfaces | `IMapaController, ICidadeController, ITitaController, ITorreController, IMapaModel, ICidadeModel, ITitaModel, ITorreModel`
 
-`Model`
+## `Model`
 
 > Componente que armazana todas os dados (em atributos) dos modelos das Entidades(Cidade, Titã e Torre) e do Mapa
 
