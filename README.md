@@ -6,7 +6,8 @@
 > Titan Defense é um jogo estilo Tower Defense que funciona dentro de um espaço celular. O objetivo do jogador é defender a cidade, que fica no final do mapa, de criaturas hostis chamadas de "titãs".
 
 ## Mapa 
-![MapaFinal](https://user-images.githubusercontent.com/62356359/123555138-3e77d000-d75a-11eb-8e10-06221883d25d.png)
+
+![Screenshot from 2021-06-28 02-53-31](https://user-images.githubusercontent.com/62356359/123587045-0f924600-d7bc-11eb-90bf-5c07ecd3623c.png)
 
 ## Torres
 > * Torres: são construídas pelo jogador, atacam os titãs para impedi-los de chegarem na cidade e tem dois tipos (torre de flechas e torre canhão) com diferentes características, além disso elas podem ser evoluídas pelo jogador para que causem mais dano.
