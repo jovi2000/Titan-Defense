@@ -64,25 +64,31 @@ public void algoInteressante(…) {
 ~~~
 
 # Destaques de Pattern
-`<Destaque de patterns adotados pela equipe. Sugestão de estrutura:>`
 
 ## Diagrama do Pattern
-`<Diagrama do pattern dentro do contexto da aplicação.>`
+
+![pattern](https://user-images.githubusercontent.com/62356359/123581854-1e282f80-d7b3-11eb-9bb8-d85df7cfce59.png)
 
 ## Código do Pattern
 ~~~java
-// Recorte do código do pattern seguindo as mesmas diretrizes de outros destaques
-public void algoInteressante(…) {
-   …
-   trechoInteressante = 100;
-}
+public void construir_torre(int linha, int coluna, String tipo) throws CompraInvalida 
+    {
+    	TorreModel torre = null;
+    	if (tipo.equalsIgnoreCase("Flecha"))
+    	{
+    		torre = new TorreDeFlechas();
+    	}
+    	else if (tipo.equalsIgnoreCase("Canhão"))
+    	{
+    		torre = new TorreCanhao();
+    	}
 ~~~
 
-> <Explicação de como o pattern foi adotado e quais suas vantagens, referenciando o diagrama.>
+> Aqui podemos ver a Implementação do Factory Method Pattern para criação de torres de maneira mais simples sem ter que ter um método para criação da Torre Cnhão e da Torre de Flecha
 
 # Conclusões e Trabalhos Futuros
 
-> <Apresente aqui as conclusões do projeto e propostas de trabalho futuro. Esta é a oportunidade em que você pode indicar melhorias no projeto a partir de lições aprendidas e conhecimentos adquiridos durante a realização do projeto, mas que não puderam ser implementadas por questões de tempo. Por exemplo, há design patterns aprendidos no final do curso que provavelmente não puderam ser implementados no jogo -- este é o espaço onde você pode apresentar como aplicaria o pattern no futuro para melhorar o jogo.>
+> O projeto trabalhou principalmente o fator da montagem e da organização da arquitetura, que é algo essencial dentro da computação. Com esse aprendizado, algo que será levado para trabalhos futuros certamente será a organização e a montagem de uma arquitetura para um projeto robusto. Outro aprendizado importante durante esse projeto foi a utilização da interface gráfica, que abriu um novo leque de possíbilidades para programação. Trabalhar com as interfaces do Java também foi algo muito interessante para o pensamento da organização dos componentes da arquitetura. Algumas melhorias que poderiam ter sido realizadas mas pela falta de tempo não foram possiveis são: uma maior utilização do plano de exceções, como por exemplo na verificação das imagens(se elas estão corretas ou não), uma maior otimização da interface gráfica, que em alguns momentos do programa acabou ficando muito pesada, um melhor uso das janelas, pois em algumas partes do jogo elas ficaram de tamanhos e em posiçes não desejadas e um maior trabalho na criação de novos titãs, já que era desejado titãs com caracteristicas diferentes mas isso não foi possível por conta do tempo.
 
 # Documentação dos Componentes
 
