@@ -145,7 +145,7 @@ public void construir_torre(int linha, int coluna, String tipo) throws CompraInv
 
 ## Diagrama Geral de Componentes
 
-![Sistema de Interfaces - Arquitetura](https://user-images.githubusercontent.com/62356359/123584721-3d758b80-d7b8-11eb-83e7-7b24fe3a2c79.jpg)
+![DiagramaInterfaces](https://user-images.githubusercontent.com/62356359/123584960-ae1ca800-d7b8-11eb-9d41-aa82d6dd9a2d.png)
 
 ## Componente `GameView`
 
