@@ -1,4 +1,4 @@
-# Titan Defense
+# Projeto `Titan Defense`
 
 # Descrição Resumida do Projeto/Jogo
 
@@ -6,33 +6,160 @@
 > Titan Defense é um jogo estilo Tower Defense que funciona dentro de um espaço celular. O objetivo do jogador é defender a cidade, que fica no final do mapa, de criaturas hostis chamadas de "titãs".
 
 ## Mapa 
-![Mapa](https://user-images.githubusercontent.com/62356359/122069573-ada10c00-cdcb-11eb-9dd0-f72c8c36f20e.png)
 
-## Torres e Titãs
->* Torres: são construídas pelo jogador, atacam os titãs para impedi-los de chegarem na cidade e tem dois tipos (torre de flechas e torre canhão) com diferentes características, além disso elas podem ser evoluídas pelo jogador para que causem mais dano.
->* Titãs: são inimigos com objetivo de chegar na cidade para causar dano, andam em linha reta e possuem diferentes tipos. Cada tipo de titã possui sua própria característica que influencia no dano ou na movimentação.
+![Screenshot from 2021-06-28 02-53-31](https://user-images.githubusercontent.com/62356359/123587045-0f924600-d7bc-11eb-90bf-5c07ecd3623c.png)
+
+## Torres
+> * Torres: são construídas pelo jogador, atacam os titãs para impedi-los de chegarem na cidade e tem dois tipos (torre de flechas e torre canhão) com diferentes características, além disso elas podem ser evoluídas pelo jogador para que causem mais dano.
+
+### Torre de Flechas
+![torreFlechasAlcance](https://user-images.githubusercontent.com/62356359/123555332-81867300-d75b-11eb-9870-3d6db902e57e.png)
+> * O quadrado verde representa a torre e os vermelhos representam as posições que a torre tem de alcance para dano. Como a torre de flechas só ataca uma posição por rodada, caso tenha mais de um titã em seu alcance ela precisa escolher um para atacar e a ordem de prioridade está representada na imagem (sendo o 1 a maior prioridade e o 4 a menor).
+### Torre de Canhão
+![TorreFlechas](https://user-images.githubusercontent.com/62356359/123555487-551f2680-d75c-11eb-9779-d88592b3fabb.png)
+> * O quadrado verde representa a torre e os vermelhos representam as posições que a torre da dano. Como a torre de canhão tem dano em area, toda rodada três posições sofrem dano do canhão.
+## Titãs
+>* Titãs: são inimigos com objetivo de chegar na cidade para causar dano, andam em linha reta e a cada nova fase ficam mais fortes (a vida e o dano aumentam).
 
 ## Cidade
-> A cidade fica no final do Mapa e a missão do jogador é proteger ela. Sempre que um titã consegue passar por todas as defesas e chegar vivo na cidade, ela perde uma certa quantidade de vida. Se a vida da cidade acabar, o jogador perde o jogo.
+> A cidade fica no final do Mapa e a missão do jogador é proteger ela. Sempre que um titã consegue passar por todas as defesas e chegar vivo na cidade, ela perde uma certa quantidade de vida (depende do dano do titã). Se a vida da cidade acabar, o jogador perde o jogo.
 
 ## Fases e sistema de dinheiro
-> * Fases: o jogo possui 5 fases e cada fase possui um certo número e tipo de titãs. Antes do começo de cada fase o jogador tem a "fase de preparação" que consiste em um certo tempo para o jogador montar e evoluir suas defesas, nesse periodo não serão gerados titãs. Depois de todos os titãs da fase serem derrotados uma nova fase irá se iniciar.
-> * Dinheiro: o jogo também possui um sistema de dinheiro para controlar a compra e a evolução de torres. Sempre que jogador passar de fase ou derrotar um titã ele será recompensado com uma certa quantidade de dinheiro. Esse dinheiro recebido poderá ser usado em toda "fase de preparação" com o intuito de melhorar as defesas.
+> * Fases: o jogo possui 10 fases, cada fase possui um número de rodadas e um certo número (que varia aleatoriamente). Antes do começo de cada rodada o jogador tem a "preparação das defesas" que consiste no tempo para o jogador montar e evoluir suas defesas. Depois da "preparação das defesas" o jogador pressiona o botão "Play" e a rodada começa. Durante a rodada ocorrem certas ações na seguinte ordem: os titãs se movem (caso haja titãs no mapa), titãs são gerado(caso ainda tenham titãs para serem gerados na fase) e as torres atacam(caso haja titãs no mapa).
+> * Dinheiro: o jogo também possui um sistema de dinheiro para controlar a compra e a evolução de torres. Sempre derrotar um titã ele será recompensado com uma certa quantidade de dinheiro. Esse dinheiro recebido poderá ser usado na "preparação das defesas" com o intuito de melhorar a defesa da cidade.
 
 # Equipe
-* `<João Vitor Viégas Barreira>` - `<175116>`
-* `<Arimã da Silva Alves Batista>` - `<194347>`
+* `João Vitor Viégas Barreira` - `175116`
+* `Arimã da Silva Alves Batista` - `194347`
 
 # Vídeos do Projeto
 
 ## Vídeo da Prévia
-> <https://drive.google.com/file/d/1E2VLxWiYAv0nPFHnypNZxOuoz48CBGjd/view>
+> https://drive.google.com/file/d/1E2VLxWiYAv0nPFHnypNZxOuoz48CBGjd/view
+
+## Vídeo do Jogo
+> https://drive.google.com/file/d/16wJ0mi4CBnj8j7ZsLVpSVaDnW06pvbyk/view?usp=sharing
 
 # Slides do Projeto
 
 ## Slides da Prévia
+> https://docs.google.com/presentation/d/1dCfNGbkELlAtR9qIP_BduD3jF_Aw-sGt2bxIJ3sxNaA/edit?usp=sharing
 
-> <https://drive.google.com/file/d/1OOp8SSEmv9yHHQGiwm8wtko_4qYf-cZQ/view>
+## Slides da Apresentação Final
+> https://docs.google.com/presentation/d/123gqI0D2ojSfrvvVR-tEmuCFakgORj0XoREfDdLoSgE/edit?usp=sharing
+
+## Relatório de Evolução
+> O projeto inicialmente tinha sido pensado para ter uma arquitetura com 4 componentes: Model, View, Controller e Gameplay, porém ao final do projeto o Gameplay foi retirado por não ser considerado útil e por deixar a arquitetura mais confusa. Além disso, do primeiro projeto do jogo para o final muitas coisas foram modificadas na ideia e no funcionamento do jogo, um exemplo é a ideia inicial de criar diversos tipos de titãs e até um "boss" na última fase do jogo, porém isso não foi concretizado. A ideia de interfaces também foi muito modifica e melhorada para ajudar na organização do código. A principal lição aprendida com as mudanças realizadas foi: organizar e pensar com muita calma a arquitetura do projeto. Embora no final a arquitetura do jogo tenha ficado compacta, as constantes mudanças na arquitetura fizeram com que o código tivesse que ser refeito variás vezs e ficou um pouco desorganizado em alguns pontos, algo que atrapalhou muito pelo fato da arquitetura não ter sido pensada com calma no começo.
+
+
+# Destaques de Código
+
+## Interação entre os componentes através de interfaces
+
+Os componentes se comunicam através de interfaces no programa. No exemplo a seguir será mostrada a interação do GameView com o MapaController, TitaController e TorreController no qual o GameView tem uma referencia do MapaController, do TitaController e do TorreController e com isso consegue chamar métodos desses controllers.
+
+~~~java
+public class GameView implements ActionListener, IRMapaController, IRCidadeController, IRTitaController, IRTorreController { 
+  ...
+  private IMapaController mapaController;
+  private ITitaController titaController;
+   private ITorreController torreController;
+  ...
+  public void setMapaController(IMapaController mapaController) {
+          this.mapaController = mapaController;
+  }
+  public void connect(ITitaController titaController) {
+        this.titaController = titaController;
+  }
+
+  public void connect(ITorreController torreController) {
+        this.torreController = torreController;
+  }
+  ...
+  titaController.moverTitas();
+  mapaController.gerarTitas();
+  torreController.ataqueDasTorres();
+  titaController.verificarTitas();
+}
+~~~
+
+## Mudança na cor dos titãs conforme a vida
+
+Os titãs mudam de cor conforme  a porcentagem de vida dos mesmos, nesse trecho podemos ver como isso é implementado, também podemos ver como o “view” conversa com o “mapaController” para saber a localização dos titãs no mapa.
+
+~~~java
+Entidade ponteiroMapa = mapaController.getCelula(j, y);
+  if (ponteiroMapa == null)
+  {
+      piso_campo[x][y].setIcon(piso);
+  }
+  else
+  {
+      titaController.connect((TitaModel)mapaController.getCelula(j,y));
+      System.out.println(titaController.porcentagemDaVida());
+      if(titaController.porcentagemDaVida() > 80) piso_campo[x][y].setIcon(dano0);
+      else if(titaController.porcentagemDaVida() > 60) piso_campo[x][y].setIcon(dano1);
+      else if(titaController.porcentagemDaVida() > 40) piso_campo[x][y].setIcon(dano2);
+      else if(titaController.porcentagemDaVida() > 20) piso_campo[x][y].setIcon(dano3);
+      else piso_campo[x][y].setIcon(dano4);
+  }
+~~~
+### Exemplo:
+
+![Screenshot from 2021-06-28 02-15-12](https://user-images.githubusercontent.com/62356359/123583866-baa00100-d7b6-11eb-9ab4-a8576c2024da.png)
+
+## Tratamento de exceções
+
+Aqui podemos ver tratamento de exceções para impedir que seja feita a compra de torres caso não haja dinheiro para efetuar a  ação.
+
+~~~java
+case "Canhão":
+    try {
+        mapaController.construir_torre(j, y, pp);
+    }
+    catch (CompraInvalida erro) {
+        compraValida = false;
+        celula[x][y].setSelectedItem("Vago");
+        JOptionPane.showMessageDialog(null, erro.getMessage());
+    }
+    if (compraValida) {
+        celula[x][y].removeAllItems();
+        teto_campo[x][y].setIcon(torreCanhao);
+        celula[x][y].addItem("Nível 1");
+        celula[x][y].addItem("Evoluir 2");
+    }
+~~~
+### Exemplo:
+
+![Screenshot from 2021-06-28 02-19-28](https://user-images.githubusercontent.com/62356359/123584192-503b9080-d7b7-11eb-94a5-ea0faa6d1c42.png)
+
+
+# Destaques de Pattern
+
+## Diagrama do Pattern
+
+![pattern](https://user-images.githubusercontent.com/62356359/123581854-1e282f80-d7b3-11eb-9bb8-d85df7cfce59.png)
+
+## Código do Pattern
+~~~java
+public void construir_torre(int linha, int coluna, String tipo) throws CompraInvalida 
+    {
+    	TorreModel torre = null;
+    	if (tipo.equalsIgnoreCase("Flecha"))
+    	{
+    		torre = new TorreDeFlechas();
+    	}
+    	else if (tipo.equalsIgnoreCase("Canhão"))
+    	{
+    		torre = new TorreCanhao();
+    	}
+~~~
+
+> Aqui podemos ver a Implementação do Factory Method Pattern para criação de torres de maneira mais simples sem ter que ter um método para criação da Torre Cnhão e da Torre de Flecha
+
+# Conclusões e Trabalhos Futuros
+
+> O projeto trabalhou principalmente o fator da montagem e da organização da arquitetura, que é algo essencial dentro da computação. Com esse aprendizado, algo que será levado para trabalhos futuros certamente será a organização e a montagem de uma arquitetura para um projeto robusto. Outro aprendizado importante durante esse projeto foi a utilização da interface gráfica, que abriu um novo leque de possíbilidades para programação. Trabalhar com as interfaces do Java também foi algo muito interessante para o pensamento da organização dos componentes da arquitetura. Algumas melhorias que poderiam ter sido realizadas mas pela falta de tempo não foram possiveis foram: uma maior utilização do plano de exceções, como por exemplo na verificação das imagens(se elas estão corretas ou não), uma maior otimização da interface gráfica, que em alguns momentos do programa acabou ficando muito pesada, um melhor uso das janelas, pois em algumas partes do jogo elas ficaram de tamanhos e em posiçes não desejadas e um maior trabalho na criação de novos titãs, já que era desejado titãs com caracteristicas diferentes.
 
 # Documentação dos Componentes
 
@@ -40,167 +167,313 @@
 
 ## Diagrama Geral do Projeto
 
-![Arquitetura melhorada (1)](https://user-images.githubusercontent.com/62356359/122250441-0b9f2380-cea0-11eb-92b0-8577cf436099.png)
+![Arquitetura Final](https://user-images.githubusercontent.com/62356359/123555578-f6a67800-d75c-11eb-8f23-ebfddb4af40e.png)
 
-> * GameView: componente que possui a main, a interface gráfica e que recebe o que é feito pelo jogador. Sempre que o jogador realiza uma nova ação o GameView avisa ao controller.
-> * MapaController: componente que possui a maior parte das funções do jogo e que realiza ou manda outro componente realizar as ações. O controller possui um ponteiro para o Gameplay e possui como atributo a matriz que representa o mapa do jogo, ou seja, possui o ponteiro de todos os Models que estão no mapa
-> * Gameplay: componente que possui duas classes e cada uma delas tem as ações (métodos) de cada Entidade (torre e titã). Sempre que o controller deseja realizar uma mudança em um Model ele avisa ao Gameplay, que realiza a mudança e devolve o valor atualizado.
-> * Model: componente que possui o modelo de cada Entidade. Os Models não possuem métodos mas guardam todas as informações do Model (em atributos) e sempre que eles precisam ser atualizados, o Gameplay realiza isso.
+> * GameView: componente que implementa a interface gráfica e que recebe o que é feito pelo jogador, como por exemplo a construção de uma torre. Sempre que o jogador realiza uma nova ação o GameView solicita ao Controller para que ele realize as modificações necessárias.
+> * Controller: componente que recebe ações do GameView e se comunica diretamente com o Model para realizar as modificações e ações solicitadas. Cada componente do Controller possui seu próprio Model e só pode se comunicar diretamente com ele. Caso um componente do Controller deseje algum dado ou alguma modificação em outro Model que não seja o dele, ele precisa se comunicar com o Controller daquele Model.
+> * Model: componente que armazana todas os dados (em atributos) dos modelos das Entidades(Cidade, Titã e Torre) e do Mapa. Caso um controller deseje receber ou modificar um dado, ele sempre precisa se comunicar com o Model. 
 
 ## Diagrama Geral de Componentes
 
-![Componentes - Arquitetura](https://user-images.githubusercontent.com/62356359/122320629-e7bbfc00-cef8-11eb-9731-fe7b140197c4.png)
+![DiagramaInterfaces](https://user-images.githubusercontent.com/62356359/123584960-ae1ca800-d7b8-11eb-9d41-aa82d6dd9a2d.png)
 
 ## Componente `GameView`
 
-> O GameView tem toda interface gráfica programada nele e recebe todas as ações que o jogador realiza. Após receber as ações realizadas pelo jogador, esse componente envia ações e informações para controller, que com isso pode realizar as modificações necessárias no mapa e no jogo.
+> Componente que implementa a interface gráfica e que recebe as ações realizadas pelo jogador
 
-![GameView](https://user-images.githubusercontent.com/62356359/122320739-205bd580-cef9-11eb-9ec6-f18d36437156.png)
+![GameView](https://user-images.githubusercontent.com/62356359/123559745-56f4e400-d774-11eb-968f-9b55188395c7.png)
 
 **Ficha Técnica**
 item | detalhamento
 ----- | -----
 Classe | `view.GameView`
 Autores | `João Barreira e Arimã Batista`
-Interfaces | `IDadosView`
+Interfaces | `IMapaController, ICidadeController, ITitaController, ITorreController`
 
-## `MapaController`
+## `Controller`
 
-> O MapaController tem a função de controlar o jogo e as mudanças que ocorrem dentro do mapa. Esse componente recebe as informações do GameView sobre o que o jogador fez e realiza, ou ordena que outro componente realize, as mudanças necessárias no mapa. É importante ressaltar que esse componente possui como atributo a matriz que representa o mapa do jogo.
+> Componente que recebe ações do GameView e se comunica diretamente com o Model para realizar as modificações e ações solicitadas
 
-![MapaController](https://user-images.githubusercontent.com/62356359/122319841-93fce300-cef7-11eb-8cb5-2435100177b3.png)
+![Controller](https://user-images.githubusercontent.com/62356359/123563407-d7beda80-d78a-11eb-975a-e8e4968ac6c0.png)
 
 **Ficha Técnica**
 item | detalhamento
 ----- | -----
-Classe | `controller.MapaController`
+Classe | `package controller (Esse componente é um conjunto de 5 classes)`
 Autores | `João Barreira e Arimã Batista`
-Interfaces | `IDadosView, IDadosModel e IController`
+Interfaces | `IMapaController, ICidadeController, ITitaController, ITorreController, IMapaModel, ICidadeModel, ITitaModel, ITorreModel`
 
 ## `Model`
 
-> O Model possui todas as informações, armazenadas em atributos, das Entidades (Torre, Titã e Cidade) e sempre que algum componente precisa de alguma informação do Model, ele é solicitado.
+> Componente que armazana todas os dados (em atributos) dos modelos das Entidades(Cidade, Titã e Torre) e do Mapa
 
-![Model](https://user-images.githubusercontent.com/62356359/122322108-4edab000-cefb-11eb-9410-6c4b09147c6b.png)
+![Model](https://user-images.githubusercontent.com/62356359/123565426-3720e880-d793-11eb-9ead-60b8e0db4f3d.png)
 
 **Ficha Técnica**
 item | detalhamento
 ----- | -----
-Classe | `model.Entidade (O componente chama Model mas a super classe que possui todos os models chama Entidade)`
+Classe | `package model (Esse componente é um conjunto de 7 classes)`
 Autores | `João Barreira e Arimã Batista`
-Interfaces | `IDadosModel, ITita, ITorre, IAtaque`
+Interfaces | `IEntidade, IMapaModel, ICidadeModel, ITitaModel, ITorreModel`
 
-## `Gameplay`
+### Interfaces
 
-> O Gameplay possui todos os métodos que representam ações de Torre e de Tita e é dividido em duas classes: TitaGameplay e TorreGameplay. Toda vez que o MapaController deseja realizar alguma alteração em um Model, ele chama o componente Gameplay para efetuar essa mudança e depois devolver o Model atualizado.
+Interfaces associadas a esse componente:
 
-![Gameplay](https://user-images.githubusercontent.com/62356359/122322736-551d5c00-cefc-11eb-8ada-e77ab77ef953.png)
+![Model_Interfaces](https://user-images.githubusercontent.com/62356359/123567693-283d3480-d799-11eb-8675-8644337902cb.png)
 
-**Ficha Técnica**
-item | detalhamento
------ | -----
-Classe | `package gameplay (Esse componente é composto por duas classes que ficam no pacote gameplay)`
-Interfaces | `ITita, ITorre, IAtaque`
+Interfaces herdeiras de IEntidade:
+
+~~~java
+public interface ICidadeModel extends IEntidade{...}
+public interface ITitaModel extends IEntidade {...}
+public interface ITorreModel extends IEntidade {...}
+~~~
 
 ## Detalhamento das Interfaces
 
-### Interface `IDadosView`
+### Interface `IMapaController`
 
-Interface provida pelo componente GameView para fornecer dados desse componente para métodos do MapaController que os usam
+`Interface provida pela classe MapaController para outras classes que requerem métodos presentes na interface`
 
 ~~~java
-public interface IDadosModel {
-    public void movimentarTita(TitaModel tita);
-    public void retirarTitaDoMapa(TitaModel tita);
-    public void atacarAlvos(TorreModel torre, LinkedList<Entidade> alvos);
+public interface IMapaController {
+    public void movimentarTita(TitaModel tita, int linha, int coluna);
+    public void retirarTitaDoMapa(int linha, int coluna);
+    public void contruirTorre(int linha, int coluna, int tipo) throws CompraInvalida;
+    public void gerarTitas();
+    public void evoluirTorre(int linha, int coluna) throws CompraInvalida;
+    public Entidade getCelula(int linha, int coluna);
+    public void setCelula(Entidade novaEntidade, int linha, int coluna);
+    public int getFase();
+    public int getNumeroDeTitas();
+    public void passarDeFase();
 }
 ~~~
 
 Método | Objetivo
 -------| --------
-`ContruirTorre` | `Cria uma nova torre no mapa dependendo do tipo dela. Tanto a posição da torre no mapa (linha e coluna) quanto o tipo fazem parte do parametro e são fornecidos pelo GameView`
-`evoluirTorre` | `Evolui o nível de uma torre ja presente no mapa. A posição da torre no mapa faz parte do parametro e é fornecida pelo GameView`
+`movimentarTita` | `recebe a linha e a coluna de um titã e modifica sua posição na matriz que representa o mapa`
+`retirarTitaDoMapa` | `recebe a linha e a coluna de um titã e o remove na matriz que representa o mapa`
+`contruirTorre` | `recebe uma linha e uma coluna e adiciona uma torre do tipo passado por parametro nessa posição da matriz que representa o mapa `
+`gerarTitas` | `cria novos titãs e os coloca no mapa`
+`evoluirTorre` | `recebe uma linha e uma coluna e nessa posição solicita a evolução da torre`
+`getCelula` | `solicita para o MapaModel a célula com linha e coluna passadas no parametro e retorna o valor da célula`
+`setCelula` | `solicita para o MapaModel a mudança da Entidade atual na celula com linha e coluna passadas no parametro para a Entidade enviada por parametro`
+`getFase` | `retorna o valor da fase atual`
+`getNumeroDeTitas` | `retorna o valor do número de titãs que restam ser gerados`
+`passarDeFase` | `aumenta em 1 o número da fase e reseta alguns atributos do MapaController`
 
-### `IDadosModel`
+### `ICidadeController`
 
-Interface provida pelo componente Model para fornecer dados desse componente para métodos do MapaController que os usam
+`Interface provida pela classe CidadeController para outras classes que requerem métodos presentes na interface`
 
 ~~~java
-public interface IDadosModel {
-    public void movimentarTita(TitaModel tita);
-    public void retirarTitaDoMapa(TitaModel tita);
-    public void atacarAlvos(TorreModel torre, LinkedList<Entidade> alvos);
+public interface ICidadeController {
+    public void diminuirVida(int dano);
+    public void aumentarDinheiro(int recompensa);
+    public void diminuirDinheiro(int gasto);
+    public int getColuna();
+    public int getVida();
+    public int getDinheiro();
 }
 ~~~
 
 Método | Objetivo
 -------| --------
-`movimentarTita` | `Muda a posição do titã dentro da matriz que representa o mapa. O parametro é um TitaModel que faz parte do componente Model`
-`retirarTitaDoMapa` | `Apaga o titã que esta dentro da matriz que representa o mapa. O parametro é um TitaModel que faz parte do componente Model`
-`atacarAlvos` | `Chama a função do componente Gameplay que ordena a torre, que está no parametro, atacar os alvos presentes na lista ligada(parametro)`
+`diminuirVida` | `diminui o atributo vida da CidadeModel conforme o dano recebido por parametro`
+`aumentarDinheiro` | `aumenta o dinheiro da CidadeModel conforme a recompensa recebida por parametro`
+`diminuirDinheiro` | `diminui o dinheiro da CidadeModel conforme o gasto recebido por parametro`
+`getColuna` | `solicita para a CidadeModel sua coluna e retorna ela`
+`getVida` | `solicita para a CidadeModel sua vida e retorna ela`
+`getDinheiro` | `solicita para a CidadeModel seu dinheiro e retorna ele`
 
-### `ITita`
+### `ITitaController`
 
-Interface provida pelo componente Model para fornecer dados do TitaModel para métodos do Gameplay que os usam
+`Interface provida pela classe TitaController para outras classes que requerem métodos presentes na interface`
 
 ~~~java
-public interface ITita {
-    public boolean verificarMovimento(TitaModel tita, Entidade[][] mapa);
-    public void movimentar(TitaModel tita);
-    public boolean verificarMorte(TitaModel tita);
+public interface ITitaController {
+    public void connect(ITitaModel titaModel);
+    public void diminuirVida(int dano);
+    public void moverTitas();
+    public void verificarTitas();
+    public int porcentagemDaVida();
+    public int getLinha();
+    public int getColuna();
+    public void setLinha(int linha);
+    public void setColuna(int coluna);
+    public void setRecompensa(int recompensa);
+    public int getVida();
+    public void setVida(int vida);
+    public void setVidaTotal(int vida);
+    public void adicionarNaLista();
+    public void setDano(int dano);
+    public boolean listaVazia();
 }
 ~~~
 
 Método | Objetivo
 -------| --------
-`verificarMovimento` | `Verfica se o movimento que o titã irá realizar é valido. O parametro é um TitaModel que faz parte do componente Model e o outro um mapa, fornecido pelo controller`
-`movimentar` | `Muda o atributo coluna do Titã, após o movimento ser realizado. O parametro é um TitaModel que faz parte do componente Model.`
-`verificarMorte` | `Verifica o atributo vida do Titã para ver se ele está morto`
+`connect` | `faz com que o titaModel passado como parametro vire o atributo TitaModel do TitaController`
+`diminuirVida` | `diminui o atributo vida da TitaModel conforme o dano recebido por parametro`
+`moverTitas` | `percorre pela lista de titãs(atributo de TitaController) e faz todos se movimentarem`
+`verificarTitas` | `percorre pela lista de titãs e verifica se algum morreu ou chegou na cidade`
+`porcentagemDaVida` | `calcula e retorna a porcentagem de vida que o titã possui`
+`getLinha` | `solicita ao TitaModel sua linha e retorna ela`
+`setLinha` | `solicita ao TitaModel para alterar sua linha de acordo com o número passado por parametro`
+`getColuna` | `solicita ao TitaModel sua coluna e retorna ela`
+`setColuna` | `solicita ao TitaModel para alterar sua coluna de acordo com o número passado por parametro`
+`setRecompensa` | `solicita ao TitaModel para alterar sua recompensa de acordo com o número passado por parametro`
+`getVida` | `solicita ao TitaModel sua vida e retorna ela`
+`setVida` | `solicita ao TitaModel para alterar sua vida de acordo com o número passado por parametro`
+`setVidaTotal` | `solicita ao TitaModel para alterar sua vidaTotal de acordo com o número passado por parametro`
+`adicionarNaLista` | `adiciona o TitaModel na lista de titãs`
+`setDano` | `solicita ao TitaModel para alterar seu dano de acordo com o número passado por parametro`
+`listaVazia` | `verifica se a lista de titãs está vazia e caso esteja vazia retorna true`
 
-### `ITorre`
+### `ITorreController`
 
-Interface provida pelo componente Model para fornecer dados do TorreModel para métodos do Gameplay que os usam
+`Interface provida pela classe TorreController para outras classes que requerem métodos presentes na interface`
 
 ~~~java
-public interface ITorre {
-    public void evoluir(TorreModel torre);
-    public LinkedList<Entidade> procurarAlvos(TorreModel torre, Entidade[][] mapa);
-    public LinkedList<Entidade> procurarAlvosFlecha(TorreModel torre, Entidade[][] mapa);
-    public LinkedList<Entidade> procurarAlvosCanhao(TorreModel torre, Entidade[][] mapa);
+public interface ITorreController {
+    public void connect(ITorreModel torreModel);
+    public void evoluir();
+    public void adicionarNaLista();
+    public void ataqueDasTorres();
+    public int getCusto();
+    public void setCusto(int custo);
 }
 ~~~
 
 Método | Objetivo
 -------| --------
-`evoluir` | `Melhora os atributos da TorreModel passsada como parametro`
-`procurarAlvos` | `Verifica pelo mapa (parametro) qual os alvos que a torre (parametro) pode atacar e retorna esse(s) alvo(s) em uma de lista ligada`
-`procurarAlvosFlecha` | `Verifica pelo mapa (parametro) qual o alvo que a TorreDeFlechas (parametro) pode atacar e retorna esse alvo em uma de lista ligada`
-`procurarAlvosCanhao` | `Verifica pelo mapa (parametro) quais os alvos que a TorreCanhao (parametro) pode atacar e retorna esses alvos em uma de lista ligada`
+`connect` | `faz com que a TorreModel passado como parametro vire o atributo TorreModel do TitaController`
+`evoluir` | `melhora alguns atributos da TorreModel(atributo do TorreController)`
+`adicionarNaLista` | `adiciona a TorreModel na lista de titãs`
+`ataqueDasTorres` | `percorre a lista de torres e faz cada torre realizar seu ataque`
+`getCusto` | `solicita para a TorreModel seu custo e retorna ele`
+`setCusto` | `solicita à TorreModel para alterar seu custo de acordo com o número passado por parametro`
 
-### `IAtaque`
+### `IEntidade`
 
-Interface provida pelo componente Model para fornecer dados das Entidades para métodos com função de ataque do Gameplay que os usam
+`Interface provida pela classe IEntidade para outras classes que requerem métodos presentes na interface`
 
 ~~~java
-public interface IAtaque {
-    public void atacar(Entidade atacante, Entidade vitima);
+public interface IEntidade {
+    public int getVida();
+    public void setVida(int vida);
+    public int getLinha();
+    public void setLinha(int linha);
+    public int getColuna();
+    public void setColuna(int coluna);
 }
 ~~~
 
 Método | Objetivo
 -------| --------
-`atacar` | `A vida da vitima (parametro) é subtraida pelo dano do atacante (parametro)`
+`getVida` | `retorna o valor do atributo vida`
+`setVida` | `altera o valor do atributo vida pelo número passado por parametro`
+`getLinha` | `retorna o valor do atributo linha`
+`setLinha` | `altera o valor do atributo linha pelo número passado por parametro`
+`getColuna` | `retorna o valor do atributo coluna`
+`setColuna` | `altera o valor do atributo coluna pelo número passado por parametro`
+
+### `IMapaModel`
+
+`Interface provida pela classe MapaModel para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface IMapaModel {
+    public Entidade getCelula(int linha, int coluna);
+    public void setCelula(Entidade novaEntidade, int linha, int coluna);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`getCelula` | `retorna a Entidade da célula na linha e na coluna passadas por parametro`
+`setCelula` | `coloca a Entidade passada como parametro na célula de linha e coluna passadas por parametro`
+
+### `ICidadeModel`
+
+`Interface provida pela classe CidadeModel para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface ICidadeModel extends IEntidade {
+    public int getDinheiro();
+    public void setDinheiro(int dinheiro);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`getDinheiro` | `retorna o valor do atributo dinheiro`
+`setDinheiro` | `altera o valor do atributo dinheiro pelo número passado por parametro`
+
+### `ITitaModel`
+
+`Interface provida pela classe TitaModel para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface ITitaModel extends IEntidade {
+    public int getDano();
+    public void setDano(int dano);
+    public int getRecompensa();
+    public void setRecompensa(int recompensa);
+    public int getVidaTotal();
+    public void setVidaTotal(int vidaTotal);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`getDano` | `retorna o valor do atributo dano`
+`setDano` | `altera o valor do atributo dano pelo número passado por parametro`
+`getRecompensa` | `retorna o valor do atributo recompensa`
+`setRecompensa` | `altera o valor do atributo recompensa pelo número passado por parametro`
+`getVidaTotal` | `retorna o valor do atributo vidaTotal`
+`setVidaTotal` | `altera o valor do atributo vidaTotal pelo número passado por parametro`
+
+
+### `ITorreModel`
+
+`Interface provida pela classe TorreModel para outras classes que requerem métodos presentes na interface`
+
+~~~java
+public interface ITorreModel extends IEntidade {
+    public int getNivel();
+    public void setNivel(int nivel);
+    public int getDano();
+    public void setDano(int dano);
+    public int getCusto();
+    public void setCusto(int custo);
+    public char getTipo();
+    public void setTipo(char tipo);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`getNivel` | `retorna o valor do atributo nivel`
+`setNivel` | `altera o valor do atributo nivel pelo número passado por parametro`
+`getDano` | `retorna o valor do atributo dano`
+`setDano` | `altera o valor do atributo dano pelo número passado por parametro`
+`getCusto` | `retorna o valor do atributo custo`
+`setCusto` | `altera o valor do atributo custo pelo número passado por parametro`
+`getTipo` | `retorna o valor do atributo tipo`
+`setTipo` | `altera o valor do atributo tipo pelo char passado por parametro`
+
 
 # Plano de Exceções
 
 ## Diagrama da hierarquia de exceções
 
-![HierarquiaExceções (1)](https://user-images.githubusercontent.com/62356359/121978251-308b7d80-cd5e-11eb-8459-4e05b7fa63fa.png)
+![exceções](https://user-images.githubusercontent.com/62356359/123581418-45cac800-d7b2-11eb-8a3c-ecc318ac1ae2.png)
 
 ## Descrição das classes de exceção
 
 Classe | Descrição
 ----- | -----
-CompraInvalida | Engloba todas as exceções de compras não aceitas
-SaldoNegativo | Indica que o saldo final da compra foi negativo
-PosicaoInvalida | Indica que a posição que o player selecionou é inválida
+CompraInvalida | Indica que a compra que está sendo realizada é inválida e não pode ocorrer
